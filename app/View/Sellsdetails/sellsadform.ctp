@@ -39,15 +39,21 @@
     echo $this->Form->input('qty', array('value' => $sellsData['Quantity']));
     echo $this->Form->input('unit_price', array('value' => $sellsData['Price']));
 
+    if($serial_array){
+        echo $this->Form->label('Serial No');
+    }
+     echo "<div style='clear: both'></div>";
     echo $this->Form->input(
         'serial_no',
         array(
             'type' => 'select',
             'multiple' => 'checkbox',
-            'options' => $serial_array
+            'options' => $serial_array,
+            'label'=>false
         )
     );
 
+
     ?>
-    <input class="close" data-dismiss="modal" id="sellbutton" type="button" value="Add Sell Items">
+    <input class="close btn btn-primary" data-dismiss="modal" id="sellbutton" type="button" value="Add Sell Items">
 </div>

@@ -4,13 +4,11 @@
     <?php echo $this->Form->create('Productserial',array('controller'=>'productserials','action'=>'add')); ?>
      Start: <input type="text" value="" name="start">
      End: <input type="text" value="" name="end">
-     <input type="text" value="<?php echo $id;?>"name="product_id">
+     <input type="hidden" value="<?php echo $id;?>"name="product_id">
      <?php echo $this->Form->end(__('Generate')); ?>
 	<table class ="table table-hover" cellpadding="0" cellspacing="0">
 	<tr>
-
 			<th><?php echo $this->Paginator->sort('serial_no'); ?></th>
-
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php

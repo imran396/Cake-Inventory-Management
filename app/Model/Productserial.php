@@ -79,6 +79,13 @@ class Productserial extends AppModel {
         $serial = $data['Productserial']['serial_no'];
         $purchasedetails_id = $data['Productserial']['purchasedetail_id'];
         $sql = "INSERT INTO productserials SET serial_no = '$serial', purchasedetail_id = '$purchasedetails_id', status = '0'";
-        $this->query($sql);
+
+       if($this->checkSerial($purchasedetails_id,$serial)){
+         $this->query($sql);
+       }
+    }
+
+    private function checkSerial($pid,$serialNo){
+        return $this->find('first',array('conditions'=>array('purchasedetail_id'=>$pid,'serial_no'=>$serialNo)));
     }
 }

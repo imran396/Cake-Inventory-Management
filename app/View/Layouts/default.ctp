@@ -53,7 +53,7 @@
         </div>
 		<div id="footer">
             <hr>
-              <p align="center"><small> Powered by Ipsita Computers Ltd.</small></p>
+              <p align="center"><small> Powered by SoftTechInternation.</small></p>
 		</div>
 	</div>
 	<?php echo $this->element('sql_dump'); ?>

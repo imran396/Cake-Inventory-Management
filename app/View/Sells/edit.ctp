@@ -51,10 +51,10 @@
         <?php
         echo $this->Form->input('id');
         echo $this->Form->input('invoice_no');
-        echo $this->Form->input('date');
         echo $this->Form->input('company_id');
         echo $this->Form->input('amount',array('readonly'=>'readonly','type'=>'text'));
         echo $this->Form->input('paid',array('readonly'=>'readonly','type'=>'text','value'=>$toalpayment));
+        echo $this->Form->input('date');
         ?>
     </fieldset>
 

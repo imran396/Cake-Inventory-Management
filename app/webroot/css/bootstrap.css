@@ -6058,3 +6058,44 @@ form .error-message {
 .multiplesales input,.multiplesales select{
     width: 180px;
 }
+
+.date select {
+
+vertical-align: middle;
+margin: 3px;
+}
+
+.date #PurchaseDateMonth{
+    margin-left: 0px;
+}
+
+
+form .submit input[type="submit"] {
+    background-image: none;
+    background-color: #006DCC !important;
+}
+
+.checkbox{
+    float: left !important;
+    width: 80px;
+}
+
+.btn-primary{
+    background-image: none !important;
+}
+
+.dataTables_length label{
+
+    width: 300px;
+    vertical-align: top;
+     font-size: 12px;
+}
+
+.dataTables_length select{
+    width: 150px;
+}
+
+.dataTable td{
+
+    line-height: 8px;
+}

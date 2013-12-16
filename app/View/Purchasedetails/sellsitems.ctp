@@ -12,7 +12,7 @@
 </style>
 
 <div class="purchasedetails index">
-	<table class ="table table-hover" cellpadding="0" cellspacing="0" id='example'>
+	<table class ="table table-hover table-bordered" cellpadding="0" cellspacing="0" id='example'>
         <thead>
         <tr>
 			<th><?php echo 'brand_id'; ?></th>

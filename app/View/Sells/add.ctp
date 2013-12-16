@@ -57,10 +57,10 @@ function remove(obj){
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('invoice_no');
-		echo $this->Form->input('date');
 		echo $this->Form->input('company_id');
 		echo $this->Form->input('amount',array('type'=>'text'));
 		echo $this->Form->input('paid',array('type'=>'text'));
+        echo $this->Form->input('date');
 	?>
 	</fieldset>
     <span><a onclick="sellsproducts()" style="text-align: right;" href="javascript:void(0);"><span class="icon-plus-sign"></span>Add Sells Products</a></span>

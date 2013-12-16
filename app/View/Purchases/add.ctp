@@ -1,32 +1,45 @@
+<script>
+var i = 1;
+function purchasesmore(){
+
+$.post(" <?php echo $this->Html->url(array('controller'=>'purchasedetails','action'=>'addpurchases'),true);?> ",
+   {counter: i},
+    function(data){
+        $('.multiplepurchase').append(data);
+    });
+
+ i++;
+}
+</script>
+
+
 <div class="purchases form">
 <?php echo $this->Form->create('Purchase'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Purchase'); ?></legend>
+		<legend><?php echo __('Edit Purchase'); ?></legend>
 	<?php
+		echo $this->Form->input('id');
 		echo $this->Form->input('invoice_no');
 		echo $this->Form->input('company_id');
-		echo $this->Form->input('paid');
+		echo $this->Form->input('paid',array('type'=>'text'));
 		echo $this->Form->input('date');
-		echo $this->Form->input('paymentmode');
-		echo $this->Form->input('check_no');
-		echo $this->Form->input('bank_name');
-		echo $this->Form->input('branch_name');
-		echo $this->Form->input('billdate');
-		echo $this->Form->input('purchaseby');
+		echo $this->Form->hidden('purchaseby',array('value'=>''));
+
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+    <table class="multiplepurchase">
+     <tr>
+         <td style="text-align: right;" colspan="5"><span onclick="purchasesmore();" class="btn btn-primary"><i class="icon-plus icon-white"></i>Add More</span></td>
+     </tr>
+    <tr>
+        <td> <?php echo $this->Form->input('Purchasedetail.0.product_id');?></td>
+        <td> <?php echo $this->Form->input('Purchasedetail.0.brand_id');?></td>
+		<td><?php  echo $this->Form->input('Purchasedetail.0.qty');?></td>
+		<td> <?php  echo $this->Form->input('Purchasedetail.0.unitprice');?></td>
 
-		<li><?php echo $this->Html->link(__('List Purchases'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Companies'), array('controller' => 'companies', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Company'), array('controller' => 'companies', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Productserials'), array('controller' => 'productserials', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Productserial'), array('controller' => 'productserials', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Puchasedetails'), array('controller' => 'puchasedetails', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Puchasedetail'), array('controller' => 'puchasedetails', 'action' => 'add')); ?> </li>
-	</ul>
+
+    </tr>
+
+   </table>
+<?php echo $this->Form->end(__('Submit')); ?>
 </div>

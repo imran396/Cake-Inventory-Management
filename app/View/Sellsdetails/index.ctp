@@ -1,8 +1,8 @@
 <div class="sellsdetails index">
 	<h2><?php echo __('Sellsdetails'); ?></h2>
-	<table class ="table table-hover" cellpadding="0" cellspacing="0">
+	<table class ="table table-hover table-bordered" cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
+
 			<th><?php echo $this->Paginator->sort('sell_id'); ?></th>
 
 			<th><?php echo $this->Paginator->sort('quantity'); ?></th>
@@ -12,7 +12,7 @@
 	<?php
 	foreach ($sellsdetails as $sellsdetail): ?>
 	<tr>
-		<td><?php echo h($sellsdetail['Sellsdetail']['id']); ?>&nbsp;</td>
+
 		<td>
 			<?php echo $this->Html->link($sellsdetail['Sell']['id'], array('controller' => 'sells', 'action' => 'view', $sellsdetail['Sell']['id'])); ?>
 		</td>

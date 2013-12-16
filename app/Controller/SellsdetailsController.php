@@ -138,7 +138,8 @@ class SellsdetailsController extends AppController {
   public function sellsadform(){
        $this->layout = "ajaxdefault";
        $serialsdata = ClassRegistry::init('Productserial')->find('list',array('fields'=>array('serial_no'),'conditions'=>array(
-               'purchasedetail_id' => $_REQUEST['purchaseDetailsId']
+               'purchasedetail_id' => $_REQUEST['purchaseDetailsId'],
+               'status'=>0
        ), 'recursive' =>-1));
       if(!empty($serialsdata)){
         $serials = array_combine($serialsdata, $serialsdata);
